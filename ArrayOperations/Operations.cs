@@ -51,19 +51,19 @@ namespace ArrayOperations
                             break;
 
                         case 4:
-                            //  revertArray();
+                          
                             rotate(ref _array);
                             break;
                         case 5:
-                            //  revertArray();
+                           
                             shift(ref _array);
                             break;
                         case 6:
-                            //  revertArray();
+                            
                             addRow(ref _array);
                             break;
                         case 7:
-                            //  revertArray();
+                           
                             addColumn(ref _array);
                             break;
 
@@ -88,30 +88,7 @@ namespace ArrayOperations
         }
 
 
-        public bool validateElement(dynamic element)
-        {
-
-            try
-            {
-
-              
-
-                if (  decimal.TryParse(element, out decimal Fnumber) || new Regex("^[a-zA-Z]*$").IsMatch(element))
-                {
-                    return true;
-                }
-               
-              
-                colorFontPrint($"{element} is not allowed");
-                return false;
-            }
-            catch (Exception ex)
-            {
-                colorFontPrint(ex.Message);
-            }
-            return false;
-        }
-
+       
         public bool createArray(ref int[,] arr)
         {
 
@@ -616,8 +593,79 @@ namespace ArrayOperations
             }
             return arr;
         }
+        public void delRow(ref int[,] arr)
+        {
+            try
+            {
+                if (arr==null)
+                {
+                    colorFontPrint("Please create array first");
+                }
+                else
+                {
+                    Console.WriteLine("Please enter row to delete");
+
+                    int _row = int.Parse(Console.ReadLine());
+                    if (_row>arr.GetLength(0))
+                    {
+                        colorFontPrint("Row does not exist");
+                    }
+                    else
+                    {
+                        int[,] newArr = new int[_row - 1, arr.GetLength(1)];
+                        for (int row = 1; row < arr.GetLength(0); row++)
+                        {
+                            for (int col = 1; col < arr.GetLength(1); col++)
+                            {
+                                if (row!=_row)
+                                {
+                                 //   newArr[row, col] = arr[row, col];
+                                 //NOT IMPLEMENTED
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                colorFontPrint(ex.Message);
+              
+            }
+        }
 
 
+
+
+        public void delCol(ref int[,] arr)
+        {
+            try
+            {
+                if (arr == null)
+                {
+                    colorFontPrint("Please create array first");
+                }
+                else
+                {
+                    int _col = int.Parse(Console.ReadLine());
+                    if (_col > arr.GetLength(1))
+                    {
+                        colorFontPrint("Column does not exist");
+                    }
+                    else
+                    {
+                        //NOT IMPLEMENTED
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                colorFontPrint(ex.Message);
+               
+            }
+        }
         public void addRow(ref int[,] arr)
         {
             try
@@ -630,17 +678,17 @@ namespace ArrayOperations
                 }
                 else
                 {
-                    int _actualRow = arr.GetLength(1);
-                ResizeArray(ref arr, 1, 0);
+                    int _actualRow = arr.GetLength(0);
+               
 
-                if (ResizeArray(ref arr, 0, 1).GetLength(1) > _actualRow)
+                if (ResizeArray(ref arr, (arr.GetLength(0) + 1) , arr.GetLength(0)).GetLength(0) > _actualRow)
 
                 {
-                    colorFontPrint("Please enter column values");
+                    Console.WriteLine("Please enter row values");
 
                     for (int col = 0; col < arr.GetLength(1); col++)
                     {
-                        for (int row = arr.GetLength(0); row <= arr.GetLength(0); row++)
+                        for (int row = arr.GetLength(0)-1; row <= arr.GetLength(0)-1; row++)
                         {
                             Console.WriteLine($"Enter row {row} col {col}");
                             try
@@ -654,7 +702,9 @@ namespace ArrayOperations
                             }
                         }
                     }
-                }
+                        printArray(arr);
+                        colorFontPrint("Successfully created", false);
+                    }
 
 
             }
@@ -663,7 +713,7 @@ namespace ArrayOperations
             catch (global::System.Exception ex)
             {
 
-                throw;
+                colorFontPrint(ex.Message);
             }
         }
 
@@ -683,13 +733,13 @@ namespace ArrayOperations
 
 
                     int _actualCol = arr.GetLength(1);
-                    if (ResizeArray(ref arr, 0, 1).GetLength(1) > _actualCol)
+                    if (ResizeArray(ref arr, arr.GetLength(0),(arr.GetLength(1) + 1)).GetLength(1) > _actualCol)
                     {
-                        colorFontPrint("Please enter column values");
+                        Console.WriteLine("Please enter column values");
 
-                        for (int row = 0; row < arr.GetLength(0); row++)
+                        for (int row = 0; row < arr.GetLength(1); row++)
                         {
-                            for (int col = arr.GetLength(1); col <= arr.GetLength(1); col++)
+                            for (int col = arr.GetLength(1)-1; col <= arr.GetLength(1)-1; col++)
                             {
                                 Console.WriteLine($"Enter row {row} col {col}");
                                 try
@@ -703,6 +753,8 @@ namespace ArrayOperations
                                 }
                             }
                         }
+                        printArray(arr);
+                        colorFontPrint("Successfully created",false);
                     }
                     }
                
@@ -712,7 +764,7 @@ namespace ArrayOperations
             catch (global::System.Exception ex)
             {
 
-                throw;
+                colorFontPrint(ex.Message);
             }
         }
 
@@ -724,7 +776,7 @@ namespace ArrayOperations
             for (int i = 0; i < minRows; i++)
                 for (int j = 0; j < minCols; j++)
                     newArray[i, j] = original[i, j];
-            return newArray;
+            return original = newArray;
         }
 
     }
