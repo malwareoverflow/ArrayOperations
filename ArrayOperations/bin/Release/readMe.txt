@@ -1,0 +1,1 @@
+Please run ArrayOperations.exe inside publish folder.

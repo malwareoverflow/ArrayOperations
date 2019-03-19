@@ -1,0 +1,11 @@
+C:\Users\root\source\repos\ArrayOperations\ArrayOperations\bin\Debug\netcoreapp2.1\ArrayOperations.deps.json
+C:\Users\root\source\repos\ArrayOperations\ArrayOperations\bin\Debug\netcoreapp2.1\ArrayOperations.runtimeconfig.json
+C:\Users\root\source\repos\ArrayOperations\ArrayOperations\bin\Debug\netcoreapp2.1\ArrayOperations.runtimeconfig.dev.json
+C:\Users\root\source\repos\ArrayOperations\ArrayOperations\bin\Debug\netcoreapp2.1\ArrayOperations.dll
+C:\Users\root\source\repos\ArrayOperations\ArrayOperations\bin\Debug\netcoreapp2.1\ArrayOperations.pdb
+C:\Users\root\source\repos\ArrayOperations\ArrayOperations\obj\Debug\netcoreapp2.1\ArrayOperations.csprojAssemblyReference.cache
+C:\Users\root\source\repos\ArrayOperations\ArrayOperations\obj\Debug\netcoreapp2.1\ArrayOperations.csproj.CoreCompileInputs.cache
+C:\Users\root\source\repos\ArrayOperations\ArrayOperations\obj\Debug\netcoreapp2.1\ArrayOperations.AssemblyInfoInputs.cache
+C:\Users\root\source\repos\ArrayOperations\ArrayOperations\obj\Debug\netcoreapp2.1\ArrayOperations.AssemblyInfo.cs
+C:\Users\root\source\repos\ArrayOperations\ArrayOperations\obj\Debug\netcoreapp2.1\ArrayOperations.dll
+C:\Users\root\source\repos\ArrayOperations\ArrayOperations\obj\Debug\netcoreapp2.1\ArrayOperations.pdb
